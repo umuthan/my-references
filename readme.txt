@@ -1,4 +1,6 @@
 === My References ===
+Contributors: umuthan
+Donate link: http://umuthan.com/
 Tags: custom post type, references, reference, widget, shortcode
 Requires at least: 5.2
 Tested up to: 4.7
@@ -45,8 +47,20 @@ A Wordpress plugin to list your references in your custom page and widgets
 
 Reference is a custom post type to define your references and shows them on page via shortcode or widgets.
 
+== Screenshots ==
+
+1. My References shortcode in editing page
+2. My References shortcode on page
+3. My References widget in widgets panel
+4. My References widget on homepage
+
 == Changelog ==
 
 = 1.0 =
 * reference custom post type added
 * widget and shortcode defined to show references
+
+== Upgrade Notice ==
+
+= 1.0 =
+Reference post type added, widget and shortcode defined.
