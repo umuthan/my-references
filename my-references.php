@@ -25,3 +25,16 @@ include('includes/functions.php');
 include('includes/post-type.php');
 include('includes/shortcode.php');
 include('includes/widget.php');
+
+/**
+ * Add scripts and css to frontend
+ */
+add_action('wp_enqueue_scripts', 'my_references_callback_for_setting_up_script');
+function my_references_callback_for_setting_up_script() {
+  wp_register_style( 'my-references-css', plugin_dir_url( __FILE__ ).'assets/css/style.css' );
+  wp_enqueue_style( 'my-references-css' );
+  wp_register_style( 'my-references', plugin_dir_url( __FILE__ ).'assets/vendor/css/slick.css' );
+  wp_enqueue_style( 'my-references-slick-css' );
+  wp_enqueue_script( 'my-references-slick-js', plugin_dir_url( __FILE__ ).'assets/vendor/js/slick.min.js', array() );
+  wp_enqueue_script( 'my-references-scripts-js', plugin_dir_url( __FILE__ ).'assets/js/scripts.js', array() );
+}

@@ -9,20 +9,22 @@ function my_references_my_references_shortcode($atts) {
       number: Number of references to show (default: -1)
   */
   $attributes = shortcode_atts( array(
-    'show_title'  => 'no',
-    'show_image'  => 'yes',
+    'show-title'  => 'no',
+    'show-image'  => 'yes',
     'animation'   => 'carousel',
     'number'      => -1,
-    'image_style' => 'thumbnail'
+    'image-style' => 'thumbnail',
+    'classes'     => '',
   ), $atts, 'my-references' );
 
   /* Get references */
   $output = get_references(
-              $attributes['show_title'],
-              $attributes['show_image'],
+              $attributes['show-title'],
+              $attributes['show-image'],
               $attributes['animation'],
               $attributes['number'],
-              $attributes['image_style']);
+              $attributes['image-style'],
+              $attributes['classes']);
 
   return $output;
 }

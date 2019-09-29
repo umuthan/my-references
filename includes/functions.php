@@ -30,7 +30,7 @@ function get_all_image_sizes() {
 /**
  * Get posts of references
  */
-function get_references($showTitle, $showImage, $animation, $number, $imageStyle) {
+function get_references($showTitle, $showImage, $animation, $number, $imageStyle, $classes) {
   $args = array(
     'numberposts' => $number,
     'post_type'   => 'reference'
@@ -38,25 +38,46 @@ function get_references($showTitle, $showImage, $animation, $number, $imageStyle
 
   $myReferences = get_posts($args);
 
-  $output = '<div class="row">';
+  if($animation=='carousel') $output = '<div class="my-references-animation-carousel">';
+  else $output = '';
 
   if($myReferences) {
     foreach ($myReferences as $reference) :
       $referenceID = $reference->ID;
+      // Reference Title
       $referenceTitle = get_the_title($referenceID);
+      // Reference Image defined as featured image in reference
       $referenceImage = get_the_post_thumbnail($referenceID, $imageStyle);
+      // Reference Web Site defined as web-site custom-field
       $referenceWebSite = get_post_meta($referenceID, 'web-site', true);
-      $output .= '<div class="col-md-3">';
-      if($referenceWebSite) $output .= '<a href="'.$referenceWebSite.'" target="_blank">';
+      // Reference Content
+      $referenceContent = $reference->post_content;
+      // Reference Permalink
+      $referencePermalink = get_the_permalink($referenceID);
+      if($animation == 'carousel') $output .= '<div class="my-references-carousel-item">';
+      else {
+        if($classes) $class = ' class="'.$classes.'"';
+        else $class = '';
+        $output .= '<div'.$class.'>';
+      }
+      if($referenceWebSite) $output .= '<a href="'.$referenceWebSite.'" target="_blank" rel="nofollow">';
+      else if($referenceContent) $output .= '<a href="'.$referencePermalink.'">';
       if($showImage == 'yes') $output .= $referenceImage;
-      if($showTitle == 'yes') $output .= $referenceTitle.$imageStyle;
+      if($showImage == 'yes' && $showTitle == 'yes') {
+        $output .= '</a><br />';
+        if($referenceWebSite) $output .= '<a href="'.$referenceWebSite.'" target="_blank" rel="nofollow">';
+        else if($referenceContent) $output .= '<a href="'.$referencePermalink.'">';
+      }
+      if($showTitle == 'yes') $output .= $referenceTitle;
       if($referenceWebSite) $output .= '</a>';
+      else if($referenceContent) $output .= '</a>';
       $output .= '</div>';
     endforeach;
     wp_reset_postdata();
   }
 
-  $output .= '</div>';
+  if($animation=='carousel') $output .= '</div>';
+  else $output .= '';
 
   return $output;
 }
