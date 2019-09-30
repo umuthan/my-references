@@ -3,7 +3,7 @@ Contributors: umuthan
 Donate link: http://umuthan.com/
 Tags: custom post type, references, reference, widget, shortcode
 Requires at least: 5.2
-Tested up to: 4.7
+Tested up to: 5.2.3
 Stable tag: 4.3
 Requires PHP: 7.2
 License: GPLv3
