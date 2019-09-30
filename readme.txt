@@ -2,10 +2,10 @@
 Contributors: umuthan
 Donate link: http://umuthan.com/
 Tags: custom post type, references, reference, widget, shortcode
-Requires at least: 5.2
+Requires at least: 4.0
 Tested up to: 5.2.3
-Stable tag: 4.3
-Requires PHP: 7.2
+Stable tag: 1.0.0
+Requires PHP: 5.3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
