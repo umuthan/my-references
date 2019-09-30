@@ -4,7 +4,7 @@ Donate link: http://umuthan.com/
 Tags: custom post type, references, reference, widget, shortcode
 Requires at least: 4.0
 Tested up to: 5.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 5.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -56,11 +56,17 @@ Reference is a custom post type to define your references and shows them on page
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.1 =
+* some tests for lower versions of PHP and Wordpress
+
+= 1.0.0 =
 * reference custom post type added
 * widget and shortcode defined to show references
 
 == Upgrade Notice ==
 
-= 1.0 =
+= 1.0.1 =
+some tests for lower versions of PHP and Wordpress
+
+= 1.0.0 =
 Reference post type added, widget and shortcode defined.
