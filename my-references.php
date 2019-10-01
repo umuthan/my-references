@@ -11,9 +11,9 @@
  * Plugin Name:       My References
  * Plugin URI:        https://wordpress.org/plugins/my-references/
  * Description:       Reference list for your Wordpress Site
- * Version:           1.0.0
- * Requires at least: 5.2
- * Requires PHP:      7.2
+ * Version:           1.0.1
+ * Requires at least: 4.0
+ * Requires PHP:      5.0
  * Author:            Umuthan Uyan
  * Author URI:        http://umuthan.com
  * Text Domain:       my-references
